@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chenantao.autolayout.AutoFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.chenantao.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="10px"
+        android:paddingLeft="10px"
+        android:paddingTop="20px">
+
+
+        <com.chenantao.playtogether.mvc.view.widget.MultipleShapeImg
+            android:id="@+id/ivAuthorAvatar"
+            android:layout_below="@id/tvFlag"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginLeft="30px"
+            android:src="@mipmap/avatar"
+            android:transitionName="@string/share_element_avatar"
+            app:type="round"/>
+
+        <com.chenantao.autolayout.AutoRelativeLayout
+            android:layout_width="160px"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivAuthorAvatar"
+            android:layout_marginTop="5px">
+
+            <TextView
+                android:id="@+id/tvUsername"
+                style="@style/mid_black"
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10px"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:maxWidth="150px"
+                android:text="陈岸涛"
+                android:textColor="@color/primary_color2"
+                android:textStyle="bold"
+                android:transitionName="@string/share_element_username"/>
+        </com.chenantao.autolayout.AutoRelativeLayout>
+
+        <TextView
+            android:id="@+id/tvFlag"
+            style="@style/small_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10px"
+            android:text="@string/from_category"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/big_black"
+            android:layout_below="@id/tvFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:layout_toRightOf="@id/ivAuthorAvatar"
+            android:gravity="center_vertical"
+            android:text="有人一起xxoo吗有人一起xxoo吗有人一起xxoo吗"
+            android:transitionName="@string/share_element_title"/>
+
+        <TextView
+            android:id="@+id/tvContent"
+            style="@style/mid_black"
+            android:layout_width="500px"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginLeft="50px"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/ivAuthorAvatar"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="5"
+            android:paddingBottom="10px"
+            android:textColor="@color/black_mid_alpha"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/tvContent"
+            android:layout_marginLeft="50px"
+            android:layout_marginTop="30px"
+            android:layout_toRightOf="@id/ivAuthorAvatar"
+            android:background="@color/black_big_alpha"/>
+    </com.chenantao.autolayout.AutoRelativeLayout>
+</com.chenantao.autolayout.AutoFrameLayout>

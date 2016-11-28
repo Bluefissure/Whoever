@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chenantao.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.chenantao.autolayout.AutoLinearLayout
+        android:id="@+id/messageToolBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8px">
+
+
+        <CheckBox
+            android:id="@+id/cbSelectEmoji"
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_marginLeft="4px"
+            android:background="@mipmap/icon_face_normal"
+            android:button="@null"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/cbSelectPic"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_marginLeft="30px"
+            android:background="@mipmap/select_pic"
+            android:button="@null"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/cbVoice"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_marginLeft="30px"
+            android:background="@mipmap/voice"
+            android:button="@null"
+            android:checked="false"/>
+
+    </com.chenantao.autolayout.AutoLinearLayout>
+
+
+    <!--选择emoji的框-->
+    <com.chenantao.autolayout.AutoFrameLayout
+        android:id="@+id/flEmojicons"
+        android:layout_width="match_parent"
+        android:layout_height="440px"
+        android:visibility="gone">
+
+        <fragment
+            android:id="@+id/emojicons"
+            class="com.rockerhieu.emojicon.EmojiconsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <!--</FrameLayout>-->
+    </com.chenantao.autolayout.AutoFrameLayout>
+
+    <!--选择照片的框-->
+    <com.chenantao.autolayout.AutoRelativeLayout
+        android:id="@+id/rlSelectPic"
+        android:layout_width="match_parent"
+        android:layout_height="440px"
+        android:visibility="gone">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvSelectPic"
+            android:layout_width="match_parent"
+            android:layout_height="270px"
+            android:layout_centerInParent="true">
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/tvSelectNumHint"
+            style="@style/big_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20px"
+            android:text="@string/select_num_hint"/>
+
+    </com.chenantao.autolayout.AutoRelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/black_big_alpha"/>
+
+    <!--发送语音的框-->
+    <com.chenantao.autolayout.AutoRelativeLayout
+        android:id="@+id/rlVoice"
+        android:layout_width="match_parent"
+        android:layout_height="440px"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/mid_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:text="按住说话"/>
+
+        <com.chenantao.playtogether.chat.mvc.view.widget.RecorderButton
+            android:id="@+id/btnRecorder"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/microphone"/>
+
+    </com.chenantao.autolayout.AutoRelativeLayout>
+</com.chenantao.autolayout.AutoLinearLayout>
